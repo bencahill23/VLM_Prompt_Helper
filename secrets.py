@@ -1,0 +1,1 @@
+secrets = {'GOOGLE_API_KEY' : "AIzaSyBC6tI_A5paMPTTAJt9OU1V25Ussf9iCeo"}
