@@ -1,87 +1,87 @@
 [
     {
-    "IsScheduledOnly": true,
-    "DisplayName": "Weather Assessment",
-    "Prompt": "You will analyze an image or video to provide a detailed weather assessment. Steps: \n 1. General Weather Conditions: Describe the overall weather (e.g., \u0022clear,\u0022 \u0022foggy,\u0022 \u0022rainy,\u0022 \u0022windy\u0022). Note the presence of precipitation (rain, snow, sleet), fog, mist, or clouds. Look for indications of wind (swaying trees, blowing debris). Describe the sky\u0027s visibility and light conditions (e.g., \u0022daytime with clear skies,\u0022 \u0022overcast\u0022). For this analysis, consider that the scene is captured from a traffic camera on a urban area. Note any potential visibility issues caused by these factors.  \n2. Visibility Assessment: Evaluate road and scene visibility. Classify it as \u0022Good,\u0022 \u0022Moderate,\u0022 or \u0022Poor.\u0022 Justify your classification by describing what is obstructing visibility (e.g., fog density, rain intensity). In the context of this urban area, consider how construction areas might affect visibility.  \n3. Road Surface Status: Analyze the road surface. Classify it as \u0022Dry,\u0022 \u0022Wet,\u0022 \u0022Icy,\u0022 or \u0022Obstructed.\u0022 Describe any observed hazards (e.g., slippery reflections, accumulated snow, water pooling). \n 4.Additional Observations: Note other weather-related issues like wind-related obstructions (fallen trees, debris), snow or ice affecting road lanes, or water pooling that could cause flooding.  \n5. Constraints: Base your entire assessment on the visual information in the input. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Intrusion Detection",
-    "Prompt": "You are analyzing a video or series of images where a people walking on the road has been detected. Note: people on motorcycles are not considered people on the road. This environment features two roads. Is is prohibited to have people on the road. A precise and critical evaluation of the footage is essential. Steps: \n1. Analyze the footage in its entire length.\n\n2. Cause Classification: Identify the most likely cause of the alarm. Choose one: \u0022Person Detected in the road,\u0022 \u0022Vehicle Detected in the sidewalk,\u0022 \u0022Animal Detected in the road,\u0022 \u0022Object Detected in the road,\u0022 or \u0022Other.\u0022 If \u0022Other,\u0022 describe the cause. Additionally, there are no designated parking areas. Visual Evidence: Provide evidence for your classification. Describe the shape, size, and appearance of the moving entity. Note any identifiable features or signs of a dynamic background (moving shadows, reflections) and the environmental context (wind, weather).\n\n4. Location: Describe where the activity occurred within the frame (e.g., \u0022center,\u0022 \u0022left side near the road\u0022). Ensure that your location assessment is specific to the road setting.\n\n5. Additional Observations: Note any other relevant details like partial visibility, movement direction/speed, or environmental factors that may have contributed to the alarm.\n\n6. Final anomaly report: Based on the previous steps, create a brief but concise report outlining your findings."
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "General traffic assessment",
-    "Prompt": "You are analyzing a video or series of images from a static CCTV camera. The purpose is to generate a brief description of the most relevant traffic-related events happening in the video. Focus on describing the traffic flow (stopped, heavy, fluid, ...), the visibility and road conditions, and any other relevant anomalies like pedestrians in the road, vehicles stopped illegally, maintenance work going on or anomalous event. Do not describe the buildings or other information not related to traffic."
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Intrusion - Intersection",
-    "Prompt": "You are analyzing a video or series of images from a static CCTV camera. The purpose is to generate a brief description of the most relevant traffic-related events happening in the video. Focus on describing the traffic flow (stopped, heavy, fluid, ...), the visibility and road conditions, and any other relevant anomalies like pedestrians in the road, vehicles stopped illegally, maintenance work going on or anomalous event. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Parking monitoring",
-    "Prompt": "You are analyzing a video or series of images from a static CCTV camera. The purpose is assess if any incident has happened into the parking, like vandalism or motorcycles falling or a car being robbed. If not incident is found return NO RELEVANT INCIDENT. Otherwise, return INCIDENT IN PARKING, and add a description of the scene and what is found. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Construction site monitoring",
-    "Prompt": "You are analyzing a video or series of images from a static CCTV camera. The purpose is to summary the work, if any, happening in the construction area visible in the scene. Detect if there is any action taking places, which construction vehicles are involved and how many people as well as if they are wearing reflective vests and /or helmets. If no activity is detected return NO ACTIVITY and explain a possible cause for it. Otherwise, return ACTIVITY DETECTED, and add a description of the construction area activities and what is found. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Illegal maneuvers monitoring",
-    "Prompt": "You are analyzing a video or series of images from a static CCTV camera. A vehicle has been detected doing an U turn. Your purpose is to validate or discard that detection. Analyze the whole video, and identify vehicles and its maneuvers. If no U turn is detected return NO ILEGAL MANEUVER and explain a possible cause for it. Otherwise, return ILEGAL MANEUVER DETECTED, and add a description of the maneuver that was found. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Simplified intrusion assessment ",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Please analyze the video content and find out if there has been a person in the road. If that is the case, return ALERT CONFIRMED and a brief description of the cause. Otherwise, return FALSE POSITIVE and explain a possible cause for it. Note: people on motorcycles are considered FALSE POSITIVES. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Simplified stalled assessment ",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Please analyze the video content and find out if there has been an stalled vehicle because illegal parking or vehicle malfunctioning. If that is the case, return ALERT CONFIRMED and a brief description of the cause. Otherwise, return FALSE POSITIVE and explain a possible cause for it. Note: if the stalled vehicle is a police vehicle or a maintenance vehicle it is considered FALSE POSITIVE. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Simplified Parking assessment ",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera monitoring a parking area. Please count the total number of cars appearing in the parking area. Identify if there is signs of any incident, e.g. motorcycles laying on the floor, vehicle broken windows, analyze the total number of cars appearing in the scene and its directions. Generate a summary per direction including number of vehicles of each type. "
-  },
-  {
-    "IsScheduledOnly": true,
-    "DisplayName": "Simplified traffic assessment ",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Analyze the entire video and classify the overall traffic flow as Stopped, Heavy, Fluid, or Light. Also analyze the visibility of the road. If the traffic is not stopped, and the visibility is good or moderate, return ALL GOOD, and if not return what is detected, e.g. stopped traffic or reduced visibility. "
-  },
-  {
-    "IsScheduledOnly": true,
-    "DisplayName": "Simplified suspicious behavior assessment ",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Please analyze the video content and find out if there has been people having anomalous behavior around parked vehicles. If that is the case, return ALERT CONFIRMED and a brief description of the event. Otherwise, return FALSE POSITIVE and explain a possible cause for it. "
-  },
-  {
-    "IsScheduledOnly": true,
-    "DisplayName": "Simplified curbs assessment ",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Please analyze the video content and find out if there are garbage outside the containers. If that is the case, return ALERT CONFIRMED and a brief description of the event. Otherwise, return FALSE POSITIVE and explain a possible cause for it. "
-  },
-  {
-    "IsScheduledOnly": true,
-    "DisplayName": "Simplified Motion assessment ",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera monitoring a traffic area. Motion has been detectected in the video. Please analyze the video content and find out if there has been any motion that triggered the alert. If the motion was caused by wind, dynamic backgrounds or small objects like tree leaves of small birds, return FALSE POSITIVE, and if the motion was caused by moving elements such as vehicles, people, animals or falling objects, return ALERT CONFIRMED."
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Maintenance activities ",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. The ultimate purpose is to create cohesive reports about the construction activities. Identify all visual elements: vehicles, people, road conditions, and behaviors. Steps: \n 1. Analyze the footage in its full length.  \n 2. After reviewing the footage, critically evaluate the visual evidence and label if construction activities are taking place in the clip.  \n 3. If no construction activities are taking place: report that no construction or maintenance activities are taking place and stop the evaluation. ELSE: Generate a report with the following sections: Summary: 1-2 sentence overview of the activities. Detailed Description: Describe the visibily of the labels and signs on the construction or maintenance area, number of people in the area (if visible), and any construction or maintenance activities taking place. Possible Risk: Identify possible threats for operators based on what you see. \n 4. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Illegal maneuver reporting",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera monitoring a traffic area. The ultimate purpose is to create cohesive reports about ythe illegal meaneuver that is taking place. Identify all visual elements: vehicles, people, road conditions, and behaviors. Steps: \n 1. Analyze the footage in its full length.  \n 2. After reviewing the footage, critically evaluate the visual evidence and label if any illegal maneuver or illegal parking has taken place in the clip.  \n 3. If no illegal maneuver or illegal parking took place: report that no anomaly was detected and stop the evaluation. ELSE: Generate a report with the following sections: Summary: 1-2 sentence overview of the maneuver or parking. Detailed Description: Describe the event, types of vehicles involved (if any), number of people (if visible), and any visual cues (damage, debris, behaviors). \n  4. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
-  },
-  {
-    "IsScheduledOnly": false,
-    "DisplayName": "Accident reporting",
-    "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. The ultimate purpose is to create cohesive reports about accidents that are taking place. Identify all visual elements: vehicles, people, road conditions, and behaviors. Steps: \n 1. Analyze the footage in its full length.  \n 2. After reviewing the footage, critically evaluate the visual evidence and label if an accident has taken place in the clip.  \n 3. If no accident took place: report that no accident took place and stop the evaluation. ELSE: Generate a report with the following sections: Summary: 1-2 sentence overview of the accident. Detailed Description: Describe the sequence of events, types of vehicles, number of people (if visible), and any visual cues (damage, debris, behaviors). Possible Cause: Reason for the likely cause based on what you see.  \n  4. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
-  }
+        "IsScheduledOnly": true,
+        "DisplayName": "Weather Assessment",
+        "Prompt": "You will analyze an image or video to provide a detailed weather assessment. Steps: \n 1. General Weather Conditions: Describe the overall weather (e.g., \"clear,\" \"foggy,\" \"rainy,\" \"windy\"). Note the presence of precipitation (rain, snow, sleet), fog, mist, or clouds. Look for indications of wind (swaying trees, blowing debris). Describe the sky's visibility and light conditions (e.g., \"daytime with clear skies,\" \"overcast\"). For this analysis, consider that the scene is captured from a traffic camera on a urban area. Note any potential visibility issues caused by these factors.  \n2. Visibility Assessment: Evaluate road and scene visibility. Classify it as \"Good,\" \"Moderate,\" or \"Poor.\" Justify your classification by describing what is obstructing visibility (e.g., fog density, rain intensity). In the context of this urban area, consider how construction areas might affect visibility.  \n3. Road Surface Status: Analyze the road surface. Classify it as \"Dry,\" \"Wet,\" \"Icy,\" or \"Obstructed.\" Describe any observed hazards (e.g., slippery reflections, accumulated snow, water pooling). \n 4.Additional Observations: Note other weather-related issues like wind-related obstructions (fallen trees, debris), snow or ice affecting road lanes, or water pooling that could cause flooding.  \n5. Constraints: Base your entire assessment on the visual information in the input. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Intrusion Detection",
+        "Prompt": "You are analyzing a video or series of images where a people walking on the road has been detected. Note: people on motorcycles are not considered people on the road. This environment features two roads. Is is prohibited to have people on the road. A precise and critical evaluation of the footage is essential. Steps: \n1. Analyze the footage in its entire length.\n\n2. Cause Classification: Identify the most likely cause of the alarm. Choose one: \"Person Detected in the road,\" \"Vehicle Detected in the sidewalk,\" \"Animal Detected in the road,\" \"Object Detected in the road,\" or \"Other.\" If \"Other,\" describe the cause. Additionally, there are no designated parking areas. Visual Evidence: Provide evidence for your classification. Describe the shape, size, and appearance of the moving entity. Note any identifiable features or signs of a dynamic background (moving shadows, reflections) and the environmental context (wind, weather).\n\n4. Location: Describe where the activity occurred within the frame (e.g., \"center,\" \"left side near the road\"). Ensure that your location assessment is specific to the road setting.\n\n5. Additional Observations: Note any other relevant details like partial visibility, movement direction/speed, or environmental factors that may have contributed to the alarm.\n\n6. Final anomaly report: Based on the previous steps, create a brief but concise report outlining your findings."
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "General traffic assessment",
+        "Prompt": "You are analyzing a video or series of images from a static CCTV camera. The purpose is to generate a brief description of the most relevant traffic-related events happening in the video. Focus on describing the traffic flow (stopped, heavy, fluid, ...), the visibility and road conditions, and any other relevant anomalies like pedestrians in the road, vehicles stopped illegally, maintenance work going on or anomalous event. Do not describe the buildings or other information not related to traffic."
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Intrusion - Intersection",
+        "Prompt": "You are analyzing a video or series of images from a static CCTV camera. The purpose is to generate a brief description of the most relevant traffic-related events happening in the video. Focus on describing the traffic flow (stopped, heavy, fluid, ...), the visibility and road conditions, and any other relevant anomalies like pedestrians in the road, vehicles stopped illegally, maintenance work going on or anomalous event. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Parking monitoring",
+        "Prompt": "You are analyzing a video or series of images from a static CCTV camera. The purpose is assess if any incident has happened into the parking, like vandalism or motorcycles falling or a car being robbed. If not incident is found return NO RELEVANT INCIDENT. Otherwise, return INCIDENT IN PARKING, and add a description of the scene and what is found. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Construction site monitoring",
+        "Prompt": "You are analyzing a video or series of images from a static CCTV camera. The purpose is to summary the work, if any, happening in the construction area visible in the scene. Detect if there is any action taking places, which construction vehicles are involved and how many people as well as if they are wearing reflective vests and /or helmets. If no activity is detected return NO ACTIVITY and explain a possible cause for it. Otherwise, return ACTIVITY DETECTED, and add a description of the construction area activities and what is found. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Illegal maneuvers monitoring",
+        "Prompt": "You are analyzing a video or series of images from a static CCTV camera. A vehicle has been detected doing an U turn. Your purpose is to validate or discard that detection. Analyze the whole video, and identify vehicles and its maneuvers. If no U turn is detected return NO ILEGAL MANEUVER and explain a possible cause for it. Otherwise, return ILEGAL MANEUVER DETECTED, and add a description of the maneuver that was found. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Simplified intrusion assessment ",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Please analyze the video content and find out if there has been a person in the road. If that is the case, return ALERT CONFIRMED and a brief description of the cause. Otherwise, return FALSE POSITIVE and explain a possible cause for it. Note: people on motorcycles are considered FALSE POSITIVES. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Simplified stalled assessment ",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Please analyze the video content and find out if there has been an stalled vehicle because illegal parking or vehicle malfunctioning. If that is the case, return ALERT CONFIRMED and a brief description of the cause. Otherwise, return FALSE POSITIVE and explain a possible cause for it. Note: if the stalled vehicle is a police vehicle or a maintenance vehicle it is considered FALSE POSITIVE. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Simplified Parking assessment ",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera monitoring a parking area. Please count the total number of cars appearing in the parking area. Identify if there is signs of any incident, e.g. motorcycles laying on the floor, vehicle broken windows, analyze the total number of cars appearing in the scene and its directions. Generate a summary per direction including number of vehicles of each type. "
+    },
+    {
+        "IsScheduledOnly": true,
+        "DisplayName": "Simplified traffic assessment ",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Analyze the entire video and classify the overall traffic flow as Stopped, Heavy, Fluid, or Light. Also analyze the visibility of the road. If the traffic is not stopped, and the visibility is good or moderate, return ALL GOOD, and if not return what is detected, e.g. stopped traffic or reduced visibility. "
+    },
+    {
+        "IsScheduledOnly": true,
+        "DisplayName": "Simplified suspicious behavior assessment ",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Please analyze the video content and find out if there has been people having anomalous behavior around parked vehicles. If that is the case, return ALERT CONFIRMED and a brief description of the event. Otherwise, return FALSE POSITIVE and explain a possible cause for it. "
+    },
+    {
+        "IsScheduledOnly": true,
+        "DisplayName": "Simplified curbs assessment ",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. Please analyze the video content and find out if there are garbage outside the containers. If that is the case, return ALERT CONFIRMED and a brief description of the event. Otherwise, return FALSE POSITIVE and explain a possible cause for it. "
+    },
+    {
+        "IsScheduledOnly": true,
+        "DisplayName": "Simplified Motion assessment ",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera monitoring a traffic area. Motion has been detectected in the video. Please analyze the video content and find out if there has been any motion that triggered the alert. If the motion was caused by wind, dynamic backgrounds or small objects like tree leaves of small birds, return FALSE POSITIVE, and if the motion was caused by moving elements such as vehicles, people, animals or falling objects, return ALERT CONFIRMED."
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Maintenance activities ",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. The ultimate purpose is to create cohesive reports about the construction activities. Identify all visual elements: vehicles, people, road conditions, and behaviors. Steps: \n 1. Analyze the footage in its full length.  \n 2. After reviewing the footage, critically evaluate the visual evidence and label if construction activities are taking place in the clip.  \n 3. If no construction activities are taking place: report that no construction or maintenance activities are taking place and stop the evaluation. ELSE: Generate a report with the following sections: Summary: 1-2 sentence overview of the activities. Detailed Description: Describe the visibily of the labels and signs on the construction or maintenance area, number of people in the area (if visible), and any construction or maintenance activities taking place. Possible Risk: Identify possible threats for operators based on what you see. \n 4. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Illegal maneuver reporting",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera monitoring a traffic area. The ultimate purpose is to create cohesive reports about ythe illegal meaneuver that is taking place. Identify all visual elements: vehicles, people, road conditions, and behaviors. Steps: \n 1. Analyze the footage in its full length.  \n 2. After reviewing the footage, critically evaluate the visual evidence and label if any illegal maneuver or illegal parking has taken place in the clip.  \n 3. If no illegal maneuver or illegal parking took place: report that no anomaly was detected and stop the evaluation. ELSE: Generate a report with the following sections: Summary: 1-2 sentence overview of the maneuver or parking. Detailed Description: Describe the event, types of vehicles involved (if any), number of people (if visible), and any visual cues (damage, debris, behaviors). \n  4. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
+    },
+    {
+        "IsScheduledOnly": false,
+        "DisplayName": "Accident reporting",
+        "Prompt": "You will analyze video footage (or a series of images) from a static CCTV camera. The ultimate purpose is to create cohesive reports about accidents that are taking place. Identify all visual elements: vehicles, people, road conditions, and behaviors. Steps: \n 1. Analyze the footage in its full length.  \n 2. After reviewing the footage, critically evaluate the visual evidence and label if an accident has taken place in the clip.  \n 3. If no accident took place: report that no accident took place and stop the evaluation. ELSE: Generate a report with the following sections: Summary: 1-2 sentence overview of the accident. Detailed Description: Describe the sequence of events, types of vehicles, number of people (if visible), and any visual cues (damage, debris, behaviors). Possible Cause: Reason for the likely cause based on what you see.  \n  4. Constraints: Only include information visible in the footage. If something is unclear, state that explicitly. "
+    }
 ]
