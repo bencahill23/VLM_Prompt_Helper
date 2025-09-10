@@ -1,6 +1,6 @@
 import streamlit as st
 import json
-import pyperclip as pc
+#import pyperclip as pc
 from google import genai
 
 
@@ -9,6 +9,7 @@ from google import genai
 # implement chunking on text outputs
 # implement evaluation-chat
 # implement model change
+# pyperclip does not work when deployed from github
 
 @st.cache_resource
 def initAI(googleapikey):
@@ -24,7 +25,8 @@ def loadPrompts(path):
 	return promptlist
 
 def clipCopy():
-	pc.copy(str(st.session_state['newPrompt']))
+	#pc.copy(str(st.session_state['newPrompt']))
+	pass
 
 def clearPrompt():
 	st.session_state['currentPrompt'] = ""
